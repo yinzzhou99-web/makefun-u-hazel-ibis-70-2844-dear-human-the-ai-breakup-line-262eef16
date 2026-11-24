@@ -32,6 +32,7 @@ def run():
     dest = os.path.join(folder, "entry.txt")
     with open(dest, "w", encoding="utf-8") as out:
         out.write(LINE)
+    os.chmod(dest, 0o644)  # scorer must be able to read entry.txt any umask
     print("wrote", len(LINE), "characters to", dest)
 
 
